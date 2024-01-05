@@ -11,7 +11,7 @@ const Welcome: FC<WelcomeProps> = ({ }) => {
       <h1 className="z-10 heading-xl -mb-9">
         {`Welcome`}
       </h1>
-      <div className="relative w-5/6 self-end">
+      <div className="relative pl-48 w-full">
         <div className="z-20 w-[446px] flex flex-col gap-10">
           <h2 className="heading-md">
             {`Welcome to Arch Studio`}

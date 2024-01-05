@@ -1,5 +1,6 @@
 import Button from '@/components/Button'
 import Carousel from '@/components/carousel/Carousel'
+import About from '@/sections/home/About'
 import Hero from '@/sections/home/Hero'
 import Welcome from '@/sections/home/Welcome'
 import Image from 'next/image'
@@ -10,6 +11,7 @@ export default function Home() {
       <div className="max-w-6xl">
         <Hero />
         <Welcome />
+        <About />
       </div>
     </main>
   )
