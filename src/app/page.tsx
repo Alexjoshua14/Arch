@@ -1,6 +1,7 @@
 import Button from '@/components/Button'
 import Carousel from '@/components/carousel/Carousel'
 import About from '@/sections/home/About'
+import Featured from '@/sections/home/Featured'
 import Hero from '@/sections/home/Hero'
 import Welcome from '@/sections/home/Welcome'
 import Image from 'next/image'
@@ -12,6 +13,7 @@ export default function Home() {
         <Hero />
         <Welcome />
         <About />
+        <Featured />
       </div>
     </main>
   )
