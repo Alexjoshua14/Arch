@@ -54,7 +54,7 @@ const Carousel: FC<CarouselProps> = ({ }) => {
       <div className="relative">
         <Image src={image.src.replace("SIZE", size)} alt={image.alt} width={1110} height={720} quality={100} />
         <div className="absolute left-0 top-0 z-10 w-full h-full bg-gray-900/40" role="overlay" />
-        <div className="z-20 fixed top-1/2 -translate-y-1/2 left-72 w-96 text-white">
+        <div className="z-20 absolute top-1/2 -translate-y-1/2 left-[12.5rem] w-96 text-white">
           <div className="flex flex-col gap-4 pb-8">
             <h2 className="heading-lg">
               {image.title}

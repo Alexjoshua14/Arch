@@ -84,7 +84,7 @@
 @layer utilities {
   /** Headings **/
   .heading-xl {
-    @apply text-[250px]/[200px] tracking-[-5px] font-bold text-gray-900;
+    @apply text-[250px]/[200px] tracking-[-5px] font-bold text-gray-100;
   }
 
   .heading-lg {
@@ -132,6 +132,10 @@
   }
 
   .navBar {
-    @apply z-40 h-10 page-gutter-x my-14;
+    @apply z-40 h-24 page-gutter-x py-7 mt-7 -mb-7;
+  }
+
+  .section {
+    @apply py-14;
   }
 }
