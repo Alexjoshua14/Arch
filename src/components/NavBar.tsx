@@ -8,7 +8,7 @@ interface NavBarProps {
 
 }
 
-const navOptions = [
+export const navOptions = [
   {
     name: 'Portfolio',
     path: '/portfolio'

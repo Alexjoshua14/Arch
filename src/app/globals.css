@@ -138,4 +138,8 @@
   .section {
     @apply py-14;
   }
+
+  .footer {
+    @apply page-gutter-x h-[200px] w-full;
+  }
 }
