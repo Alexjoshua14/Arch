@@ -11,8 +11,8 @@ const Welcome: FC<WelcomeProps> = ({ }) => {
       <h1 className="hidden sm:block z-10 heading-xl -mb-9">
         {`Welcome`}
       </h1>
-      <div className="relative pl-48 w-full">
-        <div className="z-20 w-[446px] flex flex-col gap-10">
+      <div className="relative w-full md:pr-[350px] flex items-center justify-start md:justify-center">
+        <div className="z-20 w-full max-w-[446px] flex flex-col gap-10">
           <h2 className="heading-md">
             {`Welcome to Arch Studio`}
           </h2>
@@ -28,8 +28,8 @@ const Welcome: FC<WelcomeProps> = ({ }) => {
             </p>
           </div>
         </div>
-        <div className="absolute right-0 bottom-0 h-fit w-[350px]">
-          <Image src="/assets/home/desktop/image-welcome.jpg" alt="" width={350} height={568} />
+        <div className="hidden md:flex absolute right-0 bottom-0 h-fit w-1/2 max-w-[350px]">
+          <Image src="/assets/home/desktop/image-welcome.jpg" alt="" width={350} height={568} className="w-full h-auto object-contain" />
         </div>
       </div>
     </section>

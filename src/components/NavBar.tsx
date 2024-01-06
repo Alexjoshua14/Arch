@@ -38,7 +38,7 @@ const NavBar: FC<NavBarProps> = ({ }) => {
 
   return (
     <>
-      <div className="z-50 absolute top-0 left-0 translate-x-1/2 -translate-y-1/2 w-[154px]">
+      <div className="z-50 absolute top-0 left-0 translate-x-1/2 -translate-y-1/2 w-[154px] whitespace-nowrap">
         <div className="cursor-vertical-text flex items-center gap-12 w-fit origin-left rotate-90">
           <div className="w-[104px] h-[2px] bg-gray-100" />
           <p className="text-gray-100 text-lg/[24px] tracking-[18px]">
@@ -50,7 +50,7 @@ const NavBar: FC<NavBarProps> = ({ }) => {
         <Link href="/" className="text-4xl font-extrabold tracking-tighter">
           Arch
         </Link>
-        <ul className="flex gap-14">
+        <ul className="flex gap-14 whitespace-nowrap">
           {navOptions.map((option) => (
             <li key={`nav-${option.name}`}>
               <Link href={option.path} className="link">

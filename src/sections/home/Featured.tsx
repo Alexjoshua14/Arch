@@ -41,10 +41,10 @@ const Featured: FC<FeaturedProps> = ({ }) => {
         </h1>
         <Button text="See All" arrow />
       </div>
-      <div className="h-[560px] w-full flex justify-between gap-4">
+      <div className="h-full w-full flex justify-between gap-4">
         {
           featuredData.map((item, index) => (
-            <div key={`Featured-${item.title}`} className="relative w-fit h-fit overflow-clip">
+            <div key={`Featured-${item.title}`} className="relative w-full h-fit overflow-clip">
               <div>
                 <Image src={item.src.replace('SIZE', screenSize)} alt={item.alt} width={350} height={560} className="w-full h-auto object-contain" />
                 <div className="absolute left-0 top-0 w-full h-full bg-gray-900/20" />

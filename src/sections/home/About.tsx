@@ -9,7 +9,7 @@ interface AboutProps {
 const About: FC<AboutProps> = ({ }) => {
   return (
     <div className="relative section w-full h-fit">
-      <div className='z-20 absolute top-1/2 -translate-y-1/2 left-48 w-[448px] flex flex-col gap-7 text-white'>
+      <div className='z-20 absolute top-1/2 -translate-y-1/2 left-48 w-full max-w-[448px] flex flex-col gap-7 text-white'>
         <h2 className="heading-md">
           {`Small team, big ideas`}
         </h2>

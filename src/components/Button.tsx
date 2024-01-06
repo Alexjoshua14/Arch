@@ -18,7 +18,7 @@ const Button: FC<ButtonProps> = ({ className, text, arrow, variant, ...props }) 
       }
       {arrow && (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-          <g fill="none" fill-rule="evenodd" stroke="#fff" stroke-width="2">
+          <g fill="none" fillRule="evenodd" stroke="#fff" strokeWidth="2">
             <path d="M15 1l9 9-9 9M0 10h24" />
           </g>
         </svg>
