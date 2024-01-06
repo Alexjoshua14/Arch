@@ -8,7 +8,7 @@ interface WelcomeProps {
 const Welcome: FC<WelcomeProps> = ({ }) => {
   return (
     <section className="relative w-full section flex flex-col">
-      <h1 className="z-10 heading-xl -mb-9">
+      <h1 className="hidden sm:block z-10 heading-xl -mb-9">
         {`Welcome`}
       </h1>
       <div className="relative pl-48 w-full">

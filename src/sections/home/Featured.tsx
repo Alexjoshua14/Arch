@@ -1,6 +1,7 @@
 'use client'
 
 import Button from '@/components/Button'
+import { useScreenSize } from '@/lib/hooks/useScreenSize'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FC, useState } from 'react'
@@ -28,8 +29,8 @@ const featuredData = [
 ]
 
 const Featured: FC<FeaturedProps> = ({ }) => {
-  const width = 1110
-  const size: 'Desktop' | 'Tablet' | 'Mobile' = 'Desktop'
+  const { screenSize } = useScreenSize()
+
 
 
   return (
@@ -40,12 +41,12 @@ const Featured: FC<FeaturedProps> = ({ }) => {
         </h1>
         <Button text="See All" arrow />
       </div>
-      <div className="h-[560px] w-full flex justify-between">
+      <div className="h-[560px] w-full flex justify-between gap-4">
         {
           featuredData.map((item, index) => (
             <div key={`Featured-${item.title}`} className="relative w-fit h-fit overflow-clip">
               <div>
-                <Image src={item.src.replace('SIZE', size)} alt={item.alt} width={350} height={560} />
+                <Image src={item.src.replace('SIZE', screenSize)} alt={item.alt} width={350} height={560} className="w-full h-auto object-contain" />
                 <div className="absolute left-0 top-0 w-full h-full bg-gray-900/20" />
               </div>
               <div className="absolute -right-3 top-4">

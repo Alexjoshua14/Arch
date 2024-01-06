@@ -1,9 +1,10 @@
 'use client'
 
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import Image from 'next/image'
 import Button from '../Button'
 import Overlay from '../image/Overlay'
+import { useScreenSize } from '@/lib/hooks/useScreenSize'
 
 interface CarouselProps {
 
@@ -45,15 +46,38 @@ const images = [
 ]
 
 const Carousel: FC<CarouselProps> = ({ }) => {
-  const width = 1440
-  const size: 'desktop' | 'tablet' | 'mobile' = 'desktop'
+  const { screenSize } = useScreenSize()
 
   const [selectedImage, setSelectedImage] = useState(images[0])
+  const [imageSize, setImageSize] = useState([1110, 720])
+
+  useEffect(() => {
+    const imageSizes = new Map([
+      ['desktop', [1110, 720]],
+      ['tablet', [573, 720]],
+      ['mobile', [375, 560]]
+    ])
+
+    const dimensions = imageSizes.get(screenSize)
+
+    if (dimensions) {
+      setImageSize(dimensions)
+    }
+  }, [screenSize])
+
+
 
   return (
-    <div className="relative w-full h-full">
-      <div className="relative">
-        <Image src={selectedImage.src.replace("SIZE", size)} alt={selectedImage.alt} width={1110} height={720} quality={100} />
+    <div className="relative w-full h-full flex items-center justify-center">
+      <div className="relative w-full">
+        <Image
+          src={selectedImage.src.replace("SIZE", screenSize)}
+          alt={selectedImage.alt}
+          width={imageSize[0]}
+          height={imageSize[1]}
+          className="w-full h-auto object-contain"
+          quality={100}
+        />
         <Overlay />
         <div className="z-20 absolute top-1/2 -translate-y-1/2 left-[12.5rem] w-[544px] text-white">
           <div className="flex flex-col gap-4 pb-8">

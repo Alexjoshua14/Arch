@@ -84,7 +84,7 @@
 @layer utilities {
   /** Headings **/
   .heading-xl {
-    @apply text-[250px]/[200px] tracking-[-5px] font-bold text-gray-100;
+    @apply sm:text-[150px]/[200px] md:text-[200px]/[200px] lg:text-[250px]/[200px] tracking-[-5px] font-bold text-gray-100;
   }
 
   .heading-lg {
