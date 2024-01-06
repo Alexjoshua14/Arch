@@ -132,7 +132,7 @@
   }
 
   .navBar {
-    @apply z-40 h-24 page-gutter-x py-7 mt-7 -mb-7;
+    @apply z-40 sticky -top-7 left-0 h-24 page-gutter-x pt-14 pb-7 mb-7;
   }
 
   .section {

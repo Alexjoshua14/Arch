@@ -46,7 +46,7 @@ const NavBar: FC<NavBarProps> = ({ }) => {
           </p>
         </div>
       </div>
-      <nav className="sticky top-0 left-0 flex gap-14 items-center navBar backdrop-blur-3xl">
+      <nav className="flex gap-14 items-center navBar backdrop-blur-3xl">
         <Link href="/" className="text-4xl font-extrabold tracking-tighter">
           Arch
         </Link>
