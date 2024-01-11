@@ -35,6 +35,7 @@ export default function About() {
               alt=""
               fill
               className="object-contain"
+              quality={100}
             />
           </div>
           <div className="absolute bottom-0 right-0 w-fit h-fit pl-10 lg:pl-44 pt-44 bg-white">
@@ -43,7 +44,7 @@ export default function About() {
             </div>
             <div className="w-[446px] flex flex-col gap-12">
               <h2 className="heading-md">Your team of professionals</h2>
-              <p>
+              <p className="text-gray-700">
                 {`Our small team of world-class professionals will work with you every step of the way. Strong relationships are at the core of everything we do. This extends to the relationship our projects have with their surroundings.`}
               </p>
             </div>
@@ -54,7 +55,7 @@ export default function About() {
             <h2 className="heading-md w-1/2">
               Our Heritage
             </h2>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 text-gray-700">
               <p>
                 {`Founded in 2007, we started as a trio of architects. Our complimentary skills and relentless attention to detail turned Arch into one of the most sought after boutique firms in the country.`}
               </p>
@@ -85,7 +86,7 @@ export default function About() {
                   <h4 className="heading-sm">
                     {leader.name}
                   </h4>
-                  <p>
+                  <p className="text-gray-900/75">
                     {leader.position}
                   </p>
                 </div>
