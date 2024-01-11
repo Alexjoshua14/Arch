@@ -5,6 +5,9 @@ import Image from 'next/image'
 import Button from '../Button'
 import Overlay from '../image/Overlay'
 import { useScreenSize } from '@/lib/hooks/useScreenSize'
+import { AnimatePresence } from 'framer-motion'
+import CarouselImage from './CarouselImage'
+import { motion } from 'framer-motion'
 
 interface CarouselProps {
 
@@ -45,10 +48,13 @@ const images = [
   }
 ]
 
+/** TODO: Correct exit animation */
 const Carousel: FC<CarouselProps> = ({ }) => {
   const { screenSize } = useScreenSize()
 
   const [selectedImage, setSelectedImage] = useState(images[0])
+  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [prevSelectedIndex, setPrevSelectedIndex] = useState(0)
   const [imageSize, setImageSize] = useState([1110, 720])
 
   useEffect(() => {
@@ -69,27 +75,26 @@ const Carousel: FC<CarouselProps> = ({ }) => {
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      <div className="relative w-full">
-        <Image
-          src={selectedImage.src.replace("SIZE", screenSize)}
-          alt={selectedImage.alt}
-          width={imageSize[0]}
-          height={imageSize[1]}
-          className="w-full h-auto object-contain"
-          quality={100}
-        />
-        <Overlay />
-        <div className="z-20 absolute top-1/2 -translate-y-1/2 left-[12.5rem] w-full max-w-[544px] text-white">
-          <div className="flex flex-col gap-4 pb-8">
-            <h2 className="heading-lg">
-              {selectedImage.title}
-            </h2>
-            <p>
-              {selectedImage.description}
-            </p>
-          </div>
-          <Button text={selectedImage.linkText} arrow />
-        </div>
+      <div style={{ width: imageSize[0], height: imageSize[1] }} className="relative">
+        <AnimatePresence>
+          {images.map((image, index) => {
+
+            if (index === selectedIndex)
+              return (
+                <motion.div
+                  key={`carousel-image-${image.title}`}
+                  initial={{ x: `${(index - prevSelectedIndex) * 100}%`, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: `${(index - selectedIndex) * 100}%`, opacity: 0, scale: 0.1 }}
+                  transition={{ duration: 1 }}
+                  className={`${index === selectedIndex ? 'absolute' : 'hidden'}`}
+                  style={{ width: imageSize[0], height: imageSize[1] }}
+                >
+                  <CarouselImage key={`carousel-image-${image.title}`}  {...{ ...image, src: image.src.replace('SIZE', screenSize) }} />
+                </motion.div>
+              )
+          })}
+        </AnimatePresence>
       </div>
       <div className="z-20 absolute bottom-0 left-0 -translate-x-1/4 w-fit h-fit flex">
         {images.map((image, index) => (
@@ -97,7 +102,7 @@ const Carousel: FC<CarouselProps> = ({ }) => {
             key={`carousel-control-${index}`}
             variant='secondary'
             text={(index + 1).toString().padStart(2, '0')}
-            onClick={() => setSelectedImage(image)}
+            onClick={() => { setSelectedImage(image); setSelectedIndex(index); setPrevSelectedIndex(selectedIndex) }}
             className={selectedImage.title === image.title ? 'bg-gray-900 text-white' : 'bg-white text-gray-500'}
           />
         ))}
@@ -107,3 +112,28 @@ const Carousel: FC<CarouselProps> = ({ }) => {
 }
 
 export default Carousel
+
+
+
+// < div className = "relative w-full" >
+//       <Image
+//         src={selectedImage.src.replace("SIZE", screenSize)}
+//         alt={selectedImage.alt}
+//         width={imageSize[0]}
+//         height={imageSize[1]}
+//         className="w-full h-auto object-contain"
+//         quality={100}
+//       />
+//       <Overlay />
+//       <div className="z-20 absolute top-1/2 -translate-y-1/2 left-[12.5rem] w-full max-w-[544px] text-white">
+//         <div className="flex flex-col gap-4 pb-8">
+//           <h2 className="heading-lg">
+//             {selectedImage.title}
+//           </h2>
+//           <p>
+//             {selectedImage.description}
+//           </p>
+//         </div>
+//         <Button text={selectedImage.linkText} arrow />
+//       </div>
+//     </div >
