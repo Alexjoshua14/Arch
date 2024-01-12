@@ -92,7 +92,7 @@
   }
 
   .heading-md {
-    @apply text-[72px]/[64px] tracking-[-2px] font-bold;
+    @apply text-[48px]/[52px] xs:text-[72px]/[64px] tracking-[-2px] font-bold;
   }
 
   .heading-sm {
@@ -120,7 +120,7 @@
 
 @layer utilities {
   .page-gutter-x {
-    @apply px-[164px];
+    @apply px-8 sm:px-24 lg:px-[164px];
   }
 
   .page-gutter-y {
@@ -133,6 +133,10 @@
 
   .navBar {
     @apply z-40 sticky -top-7 left-0 h-24 page-gutter-x pt-14 pb-7 mb-7;
+  }
+
+  .nav-side {
+    @apply w-8 sm:w-24 lg:w-[164px];
   }
 
   .section {

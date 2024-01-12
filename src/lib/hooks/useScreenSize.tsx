@@ -14,7 +14,7 @@ export const useScreenSize = () => {
       if (window.innerWidth > 768) {
         setScreenSize('desktop')
         setWidth(window.innerWidth)
-      } else if (window.innerWidth > 375) {
+      } else if (window.innerWidth > 480) {
         setScreenSize('tablet')
         setWidth(window.innerWidth)
       } else {
