@@ -16,7 +16,7 @@ const Hero: FC<HeroProps> = ({ src, alt, header, title, description }) => {
   const { screenSize } = useScreenSize()
 
   return (
-    <div className="w-full h-full xs:page-gutter-x">
+    <div className="w-full h-full xs:page-gutter-x section">
       <section className="relative w-full h-fit flex flex-col ">
         <div className="relative w-full aspect-[375/240] xs:aspect-[573/635] sm:aspect-auto lg:w-[635px] sm:h-[720px]" >
           <Image

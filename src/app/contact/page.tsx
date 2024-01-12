@@ -1,3 +1,4 @@
+import ContactForm from "@/components/ContactForm"
 import Hero from "@/components/Hero"
 import Map from "@/components/Map"
 import Image from "next/image"
@@ -68,7 +69,7 @@ export default function Contact() {
     <main className="min-h-[60dvh] page-gutter-y">
       <Hero {...heroContent} />
       <div className="w-full page-gutter-x">
-        <section className="w-full py-20 flex flex-col lg:flex-row gap-10">
+        <section className="w-full flex flex-col lg:flex-row gap-10 section">
           <div className="flex-1">
             <h2 className="heading-md">
               Contact Details
@@ -78,8 +79,11 @@ export default function Contact() {
           <ContactInfo title="Office II" mail="archtwo@mail.com" address="3399 Wines Lane TX" phone="987-654-7654" mapLink="https://www.google.com/maps" />
         </section>
       </div>
-      <div className="w-full xs:page-gutter-x">
+      <div className="w-full xs:page-gutter-x section">
         <Map />
+      </div>
+      <div className="w-full page-gutter-x">
+        <ContactForm />
       </div>
     </main>
   )

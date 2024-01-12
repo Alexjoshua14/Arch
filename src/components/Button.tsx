@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
-import { FC, HTMLAttributes } from 'react'
+import { ButtonHTMLAttributes, DetailedHTMLProps, FC, HTMLAttributes } from 'react'
 
-interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   text?: string
   arrow?: boolean
   variant?: 'primary' | 'secondary'
