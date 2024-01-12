@@ -11,10 +11,10 @@ export const useScreenSize = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 768) {
+      if (window.innerWidth >= 768) {
         setScreenSize('desktop')
         setWidth(window.innerWidth)
-      } else if (window.innerWidth > 480) {
+      } else if (window.innerWidth >= 480) {
         setScreenSize('tablet')
         setWidth(window.innerWidth)
       } else {
