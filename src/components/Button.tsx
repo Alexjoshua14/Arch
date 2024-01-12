@@ -10,7 +10,7 @@ interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonE
 
 const Button: FC<ButtonProps> = ({ className, text, arrow, variant, ...props }) => {
   return (
-    <button className={cn(`${variant === 'secondary' ? "w-20 h-20" : "px-8 py-6"} flex items-center justify-center gap-6 btn`, className)} {...props}>
+    <button className={cn(`${variant === 'secondary' ? "w-14 h-14 xl:w-20 xl:h-20" : "px-8 py-6"} flex items-center justify-center gap-6 btn`, className)} {...props}>
       {text &&
         <p>
           {text}

@@ -23,7 +23,7 @@ const CarouselImage: FC<CarouselImageProps> = ({ src, alt, title, description, l
         quality={100}
       />
       <Overlay />
-      <div className="z-20 absolute top-1/2 -translate-y-1/2 left-[12.5rem] w-full max-w-[544px] text-white">
+      <div className="z-20 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-[17%] w-3/4 xs:w-fit max-w-[544px] text-white">
         <div className="flex flex-col gap-4 pb-8">
           <h2 className="heading-lg">
             {title}

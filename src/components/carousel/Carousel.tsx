@@ -75,7 +75,7 @@ const Carousel: FC<CarouselProps> = ({ }) => {
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      <div style={{ width: imageSize[0], height: imageSize[1] }} className="relative">
+      <div style={{ aspectRatio: imageSize[0] / imageSize[1] }} className="relative w-full h-auto">
         <AnimatePresence>
           {images.map((image, index) => {
 
@@ -87,8 +87,7 @@ const Carousel: FC<CarouselProps> = ({ }) => {
                   animate={{ x: 0, opacity: 1 }}
                   exit={{ x: `${(index - selectedIndex) * 100}%`, opacity: 0, scale: 0.1 }}
                   transition={{ duration: 1 }}
-                  className={`${index === selectedIndex ? 'absolute' : 'hidden'}`}
-                  style={{ width: imageSize[0], height: imageSize[1] }}
+                  className={`${index === selectedIndex ? 'absolute' : 'hidden'} w-full h-full`}
                 >
                   <Suspense fallback={<div className="w-full h-full bg-teal-700/40 border-[1px] border-teal-200/20" />}>
                     <CarouselImage key={`carousel-image-${image.title}`}  {...{ ...image, src: image.src.replace('SIZE', screenSize) }} />
@@ -98,7 +97,7 @@ const Carousel: FC<CarouselProps> = ({ }) => {
           })}
         </AnimatePresence>
       </div>
-      <div className="z-20 absolute bottom-0 left-0 -translate-x-1/4 w-fit h-fit flex">
+      <div className="z-20 absolute bottom-0 left-0 -translate-x-1/4 w-fit h-fit hidden min-[900px]:flex">
         {images.map((image, index) => (
           <Button
             key={`carousel-control-${index}`}

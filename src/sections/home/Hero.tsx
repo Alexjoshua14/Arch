@@ -7,7 +7,7 @@ interface HeroProps {
 
 const Hero: FC<HeroProps> = ({ }) => {
   return (
-    <div className="section">
+    <div className="section xs:page-gutter-x">
       <Carousel />
     </div>
   )

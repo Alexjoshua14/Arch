@@ -88,7 +88,7 @@
   }
 
   .heading-lg {
-    @apply text-[96px]/[80px] tracking-[-2px] font-bold;
+    @apply text-5xl xs:text-7xl sm:text-[96px]/[80px] tracking-[-2px] font-bold;
   }
 
   .heading-md {
