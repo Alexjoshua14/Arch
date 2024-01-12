@@ -1,6 +1,4 @@
-'use client'
-
-import { useScreenSize } from "@/lib/hooks/useScreenSize";
+import Hero from "@/components/Hero";
 import Image from "next/image";
 
 
@@ -27,36 +25,21 @@ const leaders = [
   }
 ]
 
+const heroContent = {
+  src: '/assets/about/SIZE/image-hero.jpg',
+  alt: '',
+  header: 'About',
+  title: 'Your team of professionals',
+  description: `Our small team of world-class professionals will work with you every step of the way. Strong relationships are at the core of everything we do. This extends to the relationship our projects have with their surroundings.`
+
+}
+
 export default function About() {
-  const { screenSize } = useScreenSize()
 
   return (
     <main className="flex items-center justify-center page-gutter-y">
       <div className="w-full h-full flex flex-col gap-28 items-center justify-center max-w-7xl">
-        <div className="w-full h-full xs:page-gutter-x">
-          <section className="relative w-full h-fit flex flex-col ">
-            <div className="relative w-full aspect-[375/240] xs:aspect-[573/635] sm:aspect-auto lg:w-[635px] sm:h-[720px]" >
-              <Image
-                src={`/assets/about/${screenSize}/image-hero.jpg`}
-                alt=""
-                fill
-                className="object-contain"
-                quality={100}
-              />
-            </div>
-            <div className="relative xs:absolute xs:bottom-0 xs:right-0 w-fit h-fit mr-8 -mt-10 xs:mt-0 xs:mr-0 pr-10 xs:pr-0 pl-10 lg:pl-44 pt-12 xs:pt-10 sm:pt-44 bg-white">
-              <div className="hidden sm:flex absolute top-0 -translate-y-1/2 right-0">
-                <h1 className="heading-xl">About</h1>
-              </div>
-              <div className="max-w-[446px] flex flex-col gap-4 sm:gap-12">
-                <h2 className="heading-md">Your team of professionals</h2>
-                <p className="text-gray-700">
-                  {`Our small team of world-class professionals will work with you every step of the way. Strong relationships are at the core of everything we do. This extends to the relationship our projects have with their surroundings.`}
-                </p>
-              </div>
-            </div>
-          </section>
-        </div>
+        <Hero {...heroContent} />
         <section className="w-full flex gap-10 page-gutter-x">
           <div className="flex-1 flex flex-col gap-14">
             <h2 className="heading-md w-1/2">

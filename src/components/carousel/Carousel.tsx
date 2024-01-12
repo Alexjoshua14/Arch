@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, useEffect, useState } from 'react'
+import { FC, Suspense, useEffect, useState } from 'react'
 import Image from 'next/image'
 import Button from '../Button'
 import Overlay from '../image/Overlay'
@@ -90,7 +90,9 @@ const Carousel: FC<CarouselProps> = ({ }) => {
                   className={`${index === selectedIndex ? 'absolute' : 'hidden'}`}
                   style={{ width: imageSize[0], height: imageSize[1] }}
                 >
-                  <CarouselImage key={`carousel-image-${image.title}`}  {...{ ...image, src: image.src.replace('SIZE', screenSize) }} />
+                  <Suspense fallback={<div className="w-full h-full bg-teal-700/40 border-[1px] border-teal-200/20" />}>
+                    <CarouselImage key={`carousel-image-${image.title}`}  {...{ ...image, src: image.src.replace('SIZE', screenSize) }} />
+                  </Suspense>
                 </motion.div>
               )
           })}
