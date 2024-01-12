@@ -85,6 +85,21 @@ const portfolioContent = [
 
 ]
 
+const imageDimensions = {
+  "desktop": {
+    width: 350,
+    height: 560
+  },
+  "tablet": {
+    width: 573,
+    height: 240
+  },
+  "mobile": {
+    width: 311,
+    height: 240
+  }
+}
+
 const ImageGallery: FC<ImageGalleryProps> = ({ }) => {
   const { screenSize } = useScreenSize()
 
@@ -92,9 +107,23 @@ const ImageGallery: FC<ImageGalleryProps> = ({ }) => {
     <div className="w-full min-h-screen h-fit page-gutter flex items-center justify-center">
       <div className="min-w-fit w-full max-w-6xl h-fit flex flex-wrap justify-center items-center gap-4">
         {portfolioContent.map((image, i) => (
-          <div key={`image-${i}`} className="min-w-80 md:min-w-60 w-full md:max-w-[350px] h-auto aspect-[573/240] md:aspect-[350/560]">
-            <Suspense fallback={<Skeleton className="w-full h-full" />}>
-              <GalleryImage src={image.src.replace("SIZE", screenSize)} alt="alt" width={350} height={560} title={image.title} date={image.date} />
+          <div
+            key={`image-${i}`}
+            className="w-full h-auto"
+            style={{ maxWidth: imageDimensions[screenSize].width, maxHeight: imageDimensions[screenSize].height }}
+          >
+            <Suspense
+              fallback={
+                <Skeleton className="w-full h-full" />
+              }
+            >
+              <GalleryImage
+                src={image.src.replace("SIZE", screenSize)}
+                alt="alt"
+                {...imageDimensions[screenSize]}
+                title={image.title}
+                date={image.date}
+              />
             </Suspense>
           </div>
         ))}
