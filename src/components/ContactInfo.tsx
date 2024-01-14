@@ -8,6 +8,9 @@ interface ContactInfoProps {
   mapLink: string
 }
 
+/**
+ * Contact info component for the contact page
+ */
 export const ContactInfo: FC<ContactInfoProps> = ({ title, mail, address, phone, mapLink }) => {
   return (
     <div className="flex-1 w-full flex justify-between flex-col xs:flex-row lg:flex-col gap-8 xs:gap-4 max-w-[600px]">

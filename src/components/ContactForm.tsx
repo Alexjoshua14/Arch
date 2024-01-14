@@ -33,12 +33,21 @@ interface FormInputProps extends InputProps {
 
 }
 
+/**
+ * Input wrapper for consistent styling in contact form
+ */
 const FormInput: FC<FormInputProps> = ({ className, ...props }) => {
   return (
     <Input className={cn("lg:pe-20 border-0 border-b-[1px] rounded-none border-b-foreground text-xl placeholder:text-gray-200", className)} {...props} />
   )
 }
 
+/**
+ * Contact form with name, email, and message fields
+ * 
+ * Uses react-hook-form and zod for validation
+ * 
+ */
 const ContactForm: FC<ContactFormProps> = ({ }) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -49,6 +58,7 @@ const ContactForm: FC<ContactFormProps> = ({ }) => {
     },
   })
 
+  /** Log data to console as a placeholder */
   const onSubmit = (data: z.infer<typeof formSchema>) => {
     console.log(data)
   }

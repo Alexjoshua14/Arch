@@ -34,8 +34,6 @@ const NavBar: FC<NavBarProps> = ({ }) => {
 
   pageName = pageName.replace('/', '').toUpperCase()
 
-
-
   return (
     <>
       <div className="z-50 absolute top-0 left-0 translate-x-1/2 -translate-y-1/2 whitespace-nowrap nav-side hidden xs:block">

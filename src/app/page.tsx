@@ -6,6 +6,9 @@ import Hero from '@/sections/home/Hero'
 import Welcome from '@/sections/home/Welcome'
 import Image from 'next/image'
 
+/**
+ * Home page with Hero, Welcome, About, and Featured sections
+ */
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">

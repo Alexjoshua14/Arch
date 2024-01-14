@@ -8,6 +8,9 @@ interface MapProps {
 
 }
 
+/**
+ * Map component for the contact page
+ */
 const Map: FC<MapProps> = ({ }) => {
   const { screenSize } = useScreenSize()
 

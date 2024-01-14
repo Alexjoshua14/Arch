@@ -2,8 +2,7 @@ import { useEffect, useState } from "react"
 
 
 /**
- * Used to get the screen size
- * @returns 
+ * Used to get the screen size and width
  */
 export const useScreenSize = () => {
   const [screenSize, setScreenSize] = useState<'desktop' | 'tablet' | 'mobile'>('desktop')

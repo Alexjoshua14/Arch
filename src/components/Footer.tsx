@@ -9,6 +9,9 @@ interface FooterProps {
 
 }
 
+/**
+ * Footer component that displays the Arch logo, navigation links, and a button to see the portfolio
+ */
 const Footer: FC<FooterProps> = ({ }) => {
   return (
     <div className="relative footer flex items-center justify-center">

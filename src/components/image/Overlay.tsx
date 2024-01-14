@@ -5,6 +5,14 @@ interface OverlayProps extends HTMLAttributes<HTMLDivElement> {
 
 }
 
+/**
+ * Overlay component with gradient covering the bottom half of the image.
+ * 
+ * Gradient moves from bottom to top, from 50% opacity black to transparent
+ * 
+ * Has a 50% opacity white overlay on hover
+ * 
+ */
 const Overlay: FC<OverlayProps> = ({ className, ...props }) => {
   return (
     <>

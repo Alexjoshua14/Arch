@@ -12,6 +12,10 @@ interface CarouselImageProps {
   linkText: string
 }
 
+/**
+ * Image component for the carousel
+ * 
+ */
 const CarouselImage: FC<CarouselImageProps> = ({ src, alt, title, description, link, linkText }) => {
   return (
     <div className="relative w-full h-full">

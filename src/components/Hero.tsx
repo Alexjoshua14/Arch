@@ -12,6 +12,9 @@ interface HeroProps {
   description: string
 }
 
+/**
+ * Hero component for the home page, with image and text
+ */
 const Hero: FC<HeroProps> = ({ src, alt, header, title, description }) => {
   const { screenSize } = useScreenSize()
 

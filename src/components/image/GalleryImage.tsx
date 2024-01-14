@@ -11,6 +11,9 @@ interface GalleryImageProps {
   date: string
 }
 
+/**
+ * Image component for the gallery
+ */
 const GalleryImage: FC<GalleryImageProps> = ({ src, alt, width, height, title, date }) => {
   return (
     <div className="relative w-full h-full group hover:cursor-pointer">

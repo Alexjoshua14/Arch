@@ -48,7 +48,11 @@ const images = [
   }
 ]
 
-/** TODO: Correct exit animation */
+/**
+ * Carousel component for the home page
+ * 
+ *  TODO: Correct exit animation 
+ */
 const Carousel: FC<CarouselProps> = ({ }) => {
   const { screenSize } = useScreenSize()
 
