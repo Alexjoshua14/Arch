@@ -31,8 +31,6 @@ const featuredData = [
 const Featured: FC<FeaturedProps> = ({ }) => {
   const { screenSize } = useScreenSize()
 
-
-
   return (
     <section className="section">
       <div className="py-14 flex justify-between">
@@ -41,7 +39,7 @@ const Featured: FC<FeaturedProps> = ({ }) => {
         </h1>
         <Button text="See All" arrow />
       </div>
-      <div className="h-full w-full flex justify-between gap-4">
+      <div className="h-full w-full flex flex-col md:flex-row justify-between gap-4">
         {
           featuredData.map((item, index) => (
             <div key={`Featured-${item.title}`} className="relative w-full h-fit overflow-clip">
