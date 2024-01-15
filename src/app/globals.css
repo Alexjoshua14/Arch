@@ -144,6 +144,6 @@
   }
 
   .footer {
-    @apply page-gutter-x h-[200px] w-full;
+    @apply h-[400px] md:h-[120px] lg:h-[200px] w-full max-w-[1110px];
   }
 }
