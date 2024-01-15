@@ -78,7 +78,7 @@ const Carousel: FC<CarouselProps> = ({ }) => {
 
 
   return (
-    <div className="relative w-full h-full flex items-center justify-center">
+    <div className="relative w-full max-w-7xl h-full flex items-center justify-center">
       <div style={{ aspectRatio: imageSize[0] / imageSize[1] }} className="relative w-full h-auto">
         <AnimatePresence>
           {images.map((image, index) => {
