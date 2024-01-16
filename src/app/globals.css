@@ -107,6 +107,10 @@
     @apply text-gray-500 text-lg/[25px] hover:text-gray-900 active:text-gray-900 transition-colors;
   }
 
+  .link-mobile {
+    @apply text-gray-900 text-3xl hover:text-gray-500 active:text-gray-700 font-bold transition-colors;
+  }
+
   .link-underline {
     @apply bg-gray-900 w-[24px] h-[1px];
   }
